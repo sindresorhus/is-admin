@@ -3,7 +3,8 @@ var childProcess = require('child_process');
 
 module.exports = function (cb) {
 	if (process.platform !== 'win32') {
-		throw new Error('Windows only');
+		setImmediate(cb, null, false);
+		return;
 	}
 
 	// http://stackoverflow.com/a/11995662/64949
