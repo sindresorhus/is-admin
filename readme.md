@@ -15,7 +15,7 @@ $ npm install --save is-admin
 ```js
 var isAdmin = require('is-admin');
 
-isAdmin(function (admin) {
+isAdmin(function (err, admin) {
 	console.log(admin);
 	// false
 });
