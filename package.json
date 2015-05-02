@@ -1,0 +1,40 @@
+{
+  "name": "is-admin",
+  "version": "1.0.2",
+  "description": "Check if the process is running as Administrator on Windows",
+  "license": "MIT",
+  "repository": "sindresorhus/is-admin",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "admin",
+    "administrator",
+    "win",
+    "win32",
+    "windows",
+    "process",
+    "running",
+    "cmd",
+    "shell",
+    "command-line",
+    "check",
+    "detect",
+    "is",
+    "root"
+  ],
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
+}
