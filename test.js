@@ -1,31 +1,16 @@
-'use strict';
-var childProcess = require('child_process');
-var test = require('ava');
+import test from 'ava';
+import execa from 'execa';
 
-if (process.platform !== 'win32') {
-	test('non-win', function (t) {
-		t.plan(1);
-
-		childProcess.execFile(process.execPath, ['fixture.js'], {cwd: __dirname}, function (err) {
-			t.assert(err, err);
-		});
+if (process.platform === 'win32') {
+	test('normal user', t => {
+		t.throws(execa('node', ['fixture.js'], {cwd: __dirname}));
 	});
 
-	return;
+	test('admin user', async t => {
+		t.notThrows(execa('elevate.exe', [process.execPath, 'fixture.js'], {cwd: __dirname}));
+	});
+} else {
+	test('non-win', async t => {
+		t.throws(execa('node', ['fixture.js'], {cwd: __dirname}));
+	});
 }
-
-test('normal user', function (t) {
-	t.plan(1);
-
-	childProcess.execFile(process.execPath, ['fixture.js'], {cwd: __dirname}, function (err) {
-		t.assert(err, err);
-	});
-});
-
-test('admin user', function (t) {
-	t.plan(1);
-
-	childProcess.execFile('elevate.exe', [process.execPath, 'fixture.js'], {cwd: __dirname}, function (err) {
-		t.assert(!err, err);
-	});
-});

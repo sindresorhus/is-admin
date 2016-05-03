@@ -13,15 +13,22 @@ $ npm install --save is-admin
 ## Usage
 
 ```js
-var isAdmin = require('is-admin');
+const isAdmin = require('is-admin');
 
-isAdmin(function (err, admin) {
+isAdmin().then(admin => {
 	console.log(admin);
-	// false
+	//=> false
 });
 ```
 
 
+## API
+
+### isAdmin()
+
+Returns a Promise for a boolean indicating if the process is running as Administrator.
+
+
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

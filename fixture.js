@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-var isAdmin = require('./');
+const isAdmin = require('./');
 
-isAdmin(function (admin) {
+isAdmin().then(admin => {
 	process.exit(admin ? 0 : 1);
 });

@@ -10,10 +10,10 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "xo && ava"
   },
   "files": [
     "index.js"
@@ -34,7 +34,14 @@
     "is",
     "root"
   ],
+  "dependencies": {
+    "execa": "^0.4.0"
+  },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
