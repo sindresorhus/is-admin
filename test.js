@@ -6,11 +6,11 @@ if (process.platform === 'win32') {
 		t.throws(execa('node', ['fixture.js'], {cwd: __dirname}));
 	});
 
-	test('admin user', async t => {
+	test('admin user', t => {
 		t.notThrows(execa('elevate.exe', [process.execPath, 'fixture.js'], {cwd: __dirname}));
 	});
 } else {
-	test('non-win', async t => {
-		t.throws(execa('node', ['fixture.js'], {cwd: __dirname}));
+	test('non-win', t => {
+		t.throws(execa('./fixture.js', {cwd: __dirname}));
 	});
 }
