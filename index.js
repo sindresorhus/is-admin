@@ -6,6 +6,13 @@ module.exports = () => {
 		return Promise.resolve(false);
 	}
 
-	// http://stackoverflow.com/a/11995662/64949
-	return execa('net.exe', ['session']).then(() => true).catch(() => false);
+	// http://stackoverflow.com/a/21295806/1641422
+	return execa('fsutil', ['dirty', 'query', '%systemdrive%']).then(() => true).catch(error => {
+		if (error.code === 'ENOENT') {
+			// http://stackoverflow.com/a/28268802
+			return execa('fltmc', []).then(() => true).catch(() => false);
+		}
+
+		return false;
+	});
 };
