@@ -26,7 +26,7 @@ isAdmin().then(admin => {
 
 ### isAdmin()
 
-Returns a Promise for a boolean indicating if the process is running as Administrator.
+Returns a `Promise<boolean>` indicating whether the process is running as Administrator.
 
 
 ## License
