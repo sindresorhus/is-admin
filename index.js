@@ -7,7 +7,7 @@ module.exports = () => {
 	}
 
 	// http://stackoverflow.com/a/21295806/1641422
-	return execa('fsutil', ['dirty', 'query', '%systemdrive%']).then(() => true).catch(error => {
+	return execa.shell('fsutil dirty query %systemdrive%').then(() => true).catch(error => {
 		if (error.code === 'ENOENT') {
 			// http://stackoverflow.com/a/28268802
 			return execa('fltmc').then(() => true).catch(() => false);
