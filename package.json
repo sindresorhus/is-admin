@@ -34,11 +34,10 @@
     "is",
     "root"
   ],
-  "dependencies": {
-    "execa": "^0.6.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "ava": "*",
+    "execa": "^0.8.0",
     "xo": "*"
   }
 }
