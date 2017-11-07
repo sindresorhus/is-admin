@@ -29,6 +29,11 @@ isAdmin().then(admin => {
 Returns a `Promise<boolean>` indicating whether the process is running as Administrator.
 
 
+## Related
+
+- [is-elevated](https://github.com/sindresorhus/is-elevated) - Check if the process is running with elevated privileges *(cross-platform)*
+
+
 ## License
 
 MIT © [Sindre Sorhus](https://sindresorhus.com)
