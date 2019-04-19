@@ -1,44 +1,46 @@
 {
-  "name": "is-admin",
-  "version": "2.1.1",
-  "description": "Check if the process is running as Administrator on Windows",
-  "license": "MIT",
-  "repository": "sindresorhus/is-admin",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "admin",
-    "administrator",
-    "win",
-    "win32",
-    "windows",
-    "process",
-    "running",
-    "cmd",
-    "shell",
-    "command-line",
-    "check",
-    "detect",
-    "is",
-    "root"
-  ],
-  "dependencies": {
-    "execa": "^0.6.1"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "is-admin",
+	"version": "2.1.1",
+	"description": "Check if the process is running as Administrator on Windows",
+	"license": "MIT",
+	"repository": "sindresorhus/is-admin",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"admin",
+		"administrator",
+		"win",
+		"win32",
+		"windows",
+		"process",
+		"running",
+		"cmd",
+		"shell",
+		"command-line",
+		"check",
+		"detect",
+		"is",
+		"root"
+	],
+	"dependencies": {
+		"execa": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
 }

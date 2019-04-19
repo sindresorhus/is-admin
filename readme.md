@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save is-admin
+$ npm install is-admin
 ```
 
 
@@ -15,10 +15,10 @@ $ npm install --save is-admin
 ```js
 const isAdmin = require('is-admin');
 
-isAdmin().then(admin => {
-	console.log(admin);
+(async () => {
+	console.log(await isAdmin());
 	//=> false
-});
+})();
 ```
 
 

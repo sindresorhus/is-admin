@@ -1,18 +1,30 @@
 'use strict';
 const execa = require('execa');
 
-module.exports = () => {
+module.exports = async () => {
 	if (process.platform !== 'win32') {
-		return Promise.resolve(false);
+		return false;
 	}
 
-	// http://stackoverflow.com/a/21295806/1641422
-	return execa.shell('fsutil dirty query %systemdrive%').then(() => true).catch(error => {
+	try {
+		// http://stackoverflow.com/a/21295806/1641422
+		await execa.shell('fsutil dirty query %systemdrive%');
+		return true;
+	} catch (error) {
 		if (error.code === 'ENOENT') {
-			// http://stackoverflow.com/a/28268802
-			return execa('fltmc').then(() => true).catch(() => false);
+			return testFltmc();
 		}
 
 		return false;
-	});
+	}
 };
+
+// http://stackoverflow.com/a/28268802
+async function testFltmc() {
+	try {
+		await execa('fltmc');
+		return true;
+	} catch (_) {
+		return false;
+	}
+}
