@@ -1,6 +1,6 @@
 {
 	"name": "is-admin",
-	"version": "2.1.1",
+	"version": "3.0.0",
 	"description": "Check if the process is running as Administrator on Windows",
 	"license": "MIT",
 	"repository": "sindresorhus/is-admin",
