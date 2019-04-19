@@ -1,13 +1,24 @@
 'use strict';
 const execa = require('execa');
 
+// https://stackoverflow.com/a/28268802
+async function testFltmc() {
+	try {
+		await execa('fltmc');
+		return true;
+	} catch (_) {
+		return false;
+	}
+}
+
 module.exports = async () => {
 	if (process.platform !== 'win32') {
 		return false;
 	}
 
 	try {
-		// http://stackoverflow.com/a/21295806/1641422
+		// TODO: Convert this to not use `.shell` as it's slighly faster
+		// https://stackoverflow.com/a/21295806/1641422
 		await execa.shell('fsutil dirty query %systemdrive%');
 		return true;
 	} catch (error) {
@@ -18,13 +29,3 @@ module.exports = async () => {
 		return false;
 	}
 };
-
-// http://stackoverflow.com/a/28268802
-async function testFltmc() {
-	try {
-		await execa('fltmc');
-		return true;
-	} catch (_) {
-		return false;
-	}
-}
