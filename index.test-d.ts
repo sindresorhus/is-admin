@@ -1,4 +1,4 @@
 import {expectType} from 'tsd';
-import isAdmin = require('.');
+import isAdmin from './index.js';
 
 expectType<Promise<boolean>>(isAdmin());

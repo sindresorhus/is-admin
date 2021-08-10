@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-'use strict';
-const isAdmin = require('.');
+import process from 'node:process';
+import isAdmin from './index.js';
 
 (async () => {
 	const admin = await isAdmin();

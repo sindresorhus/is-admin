@@ -1,18 +1,14 @@
 /**
-Check if the process is running as Administrator on Windows.
+Check if the process is running as administrator on Windows.
 
-@returns Whether the process is running as Administrator.
+@returns Whether the process is running as administrator.
 
 @example
 ```
-import isAdmin = require('is-admin');
+import isAdmin from 'is-admin';
 
-(async () => {
-	console.log(await isAdmin());
-	//=> false
-})();
+console.log(await isAdmin());
+//=> false
 ```
 */
-declare function isAdmin(): Promise<boolean>;
-
-export = isAdmin;
+export default function isAdmin(): Promise<boolean>;
